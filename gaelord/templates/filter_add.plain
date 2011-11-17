@@ -1,0 +1,5 @@
+{% if i == 0 %}File name pattern?{% endif %}
+{% if i == 1 %}Function name pattern?{% endif %}
+{% if i == 2 %}Level name pattern?{% endif %}
+{% if i == 3 %}Line name pattern?{% endif %}
+{% if i == 4 %}Message pattern?{% endif %}

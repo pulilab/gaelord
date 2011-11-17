@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if subscriber %}
+<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+var token = '{{ token }}';
+// ]]>
+</script>
+<script type="text/javascript" src="{{ url_prefix }}js/channel_handler.js"></script>
+<ul id="log-records" class="flw"></ul>
+{% endif %}
+{% endblock %}

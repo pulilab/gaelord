@@ -1,0 +1,18 @@
+<li>
+  <b>Message:</b>
+  <span><i>{{ message }}</i></span>
+  <br>
+  <b>File name:</b>
+  <span class="fln">{{ filename }}</span>
+  <br>
+  <b>Function name:</b>
+  <span>{{ funcname }}</span>
+  <br>
+  <b>Level name:</b>
+  <span class="lvl {{ levelname }}"><strong>{{ levelname }}</strong></span>
+  <br>
+  <b>Line number:</b>
+  <span>{{ lineno }}</span>
+  <br>
+  <a href="{{ url_prefix }}filter/add?filename={{ filename }}&funcname={{ funcname }}&levelname={{ levelname }}&lineno={{ lineno }}&message={{ message }}">filter this</a>
+</li>

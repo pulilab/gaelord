@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{{ url_prefix }}filter/add" method="post">
+  <input type="hidden" name="action" value="add"\>
+  <hgroup>
+    <h4>Add filter</h4>
+    <input type="submit" class="btn small danger right" value="Add filter"\>
+  </hgroup>
+  <ul class="tbl">
+    <li>
+      <b>File name:</b>
+      <input class="fln" name="fileName" type="text" value="{{ filename }}"\>
+    </li>
+    <li>
+      <b>Function name:</b>
+      <input name="funcName" type="text" value="{{ funcname }}"\>
+    </li>
+    <li>
+      <b>Level name:</b>
+      <input name="levelName" type="text" value="{{ levelname }}"\>
+    </li>
+    <li>
+      <b>Line number:</b>
+      <input name="lineNo" type="text" value="{{ lineno }}"\>
+    </li>
+    <li>
+      <b>Message:</b>
+      <input name="message" type="text" value="{{ message }}"\>
+    </li>
+  </ul>
+</form>
+{% endblock %}

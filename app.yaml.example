@@ -1,0 +1,27 @@
+handlers:
+  - url: /gaelord/js
+    static_dir: gaelord/static/js
+
+  - url: /gaelord/css
+    static_dir: gaelord/static/css
+
+  - url: /gaelord/.*
+    script: gaelord/admin.py
+    login: admin
+
+  - url: /_ah/xmpp/message/chat/
+    script: gaelord/bot.py
+
+admin_console:
+  pages:
+    - name: Gaelord
+      url: /gaelord/
+    
+    - name: Gaelord - manage filters
+      url: /gaelord/filters
+    
+    - name: Gaelord - live log records
+      url: /gaelord/wall
+
+inbound_services:
+  - xmpp_message

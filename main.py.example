@@ -1,0 +1,2 @@
+from gaelord import loghandler
+loghandler.LogDispatcherHandler.register_handler()

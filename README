@@ -1,0 +1,90 @@
+gaelord
+======
+
+License
+-------
+
+gaelord is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+gaelord is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with gaelord.  If not, see <http://www.gnu.org/licenses/>
+
+Description
+------
+
+gaelord is an extension to Google Appengine. It extends the logging mechanism of
+GAE with an XMPP bot along with subscription management, a filtering system for
+log records and a live-updating log wall using Channel API.
+
+It's easily deployable into any existing python GAE application, plugs into the
+GAE Admin Console and looks nice.
+
+Install
+-------
+
+1) Copy the gaelord directory and its contents into the root directory of your
+app.
+
+2) Merge the app.yaml.example file from the project root with your app.yaml.
+
+3) Add the lines from main.py.example to your main.py, somewhere before you
+call run_wsgi_app().
+
+4) Done. The gaelord admin pages are accessible from the GAE Admin Console, under
+"Custom".
+
+Usage
+-----
+
+Once deployed, gaelord registers itself in the GAE Admin Console. A subscription
+is required to use the XMPP 'service', this can be done from the admin pages.
+
+A subscriber can create and delete filters which are stored in the datastore.
+Filters control if a log record is sent to a subscription (as an XMPP instant
+message) upon occurrence.
+
+When a log record is emitted gaelord generates a list of receivers from the list
+of subscribers based on their filters and sends the log record if necessary.
+
+The live-updating log wall is accessible without subscription.
+
+Filters
+-------
+
+A filter contains self-describing fields according to a log record. A field in
+a filter is a regular expression which is matched against the corresponding
+property in the log record object.
+
+If every field of a filter matches for the properties of a log record, the
+record is considered *filtered* and is not sent to the subscriber. Otherwise the
+log record is sent to the subscriber.
+
+Bot
+---
+
+The instant messages are sent by an XMPP bot, from a JID (Jabber ID) which is
+constructed from the Application ID, like this::
+
+    for an application with an appid "myapplication" the bot's address would be:
+    myapplication@appspot.com
+
+The bot accepts commands which are described in the bot's built-in help. The
+help can be accessed by sending the message::
+
+    /help
+
+to the bot.
+
+Templates
+---------
+
+The admin pages and the bot's replies are generated using the Django template
+facility.

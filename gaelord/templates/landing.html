@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if subscriber %}
+<div class="grids">
+  <div class="grid-16 borderbox round">        
+    <h3>Hello!</h3>
+    <p>You are logged in as <b>{{ email }}</b>.</p>
+    <p>
+      <a href="{{ url_prefix }}filters" class="btn primary">manage filters</a>
+      <a href="{{ logout_url }}" class="btn danger">sign out</a>
+    </p>
+  </div>
+</div>
+{% else %}    
+<div class="grids">
+  <div class="grid-16 borderbox round">
+    <h3>Hello visitor!</h3>
+    <p>First, you need to subscribe...</p>
+    <p><a href="{{ url_prefix }}subscribe" class="btn primary">subscribe</a></p>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

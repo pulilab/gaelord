@@ -1,0 +1,13 @@
+Filters for {{ jid }}:
+{% if filters %}
+  {% for filter, key in filters %}
+  {{ forloop.counter }}:
+    Filename: {{ filter.patterns.fileName }}
+    Function name: {{ filter.patterns.funcName }}
+    Level name: {{ filter.patterns.levelName }}
+    Line number pattern: {{ filter.patterns.lineNo }}
+    Message pattern: {{ filter.patterns.message }}
+      {% endfor %}
+{% else %}
+  No filters
+{% endif %}

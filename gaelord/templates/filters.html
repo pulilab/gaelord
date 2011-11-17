@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if subscriptions %}
+  {% for email, filters in subscriptions.items %}
+<ul id="filters">
+  <li>
+    <hgroup class="borderbox round">
+      <h3>Email: {{ email }}</h3>
+      <a href="{{ url_prefix }}filter/add" class="btn primary right">add filter</a>
+    </hgroup>
+    {% if filters %}
+    <ul>
+      {% for filter, key in filters %}
+      <li>
+        <hgroup>
+          <h4>Filter</h4>
+          <a href="{{ urel_prefix }}filter/delete?key={{ key }}" class="btn small danger right">delete</a>
+        </hgroup>
+        <ul class="tbl">
+          <li>
+            <b>File name:</b>
+            <span class="fln">{{ filter.patterns.fileName }}</span>
+          </li>
+          <li>
+            <b>Function name:</b>
+            <span>{{ filter.patterns.funcName }}</span>
+          </li>
+          <li>
+            <b>Level name:</b>
+            <span class="lvl {{ filter.patterns.levelName }}"><strong>{{ filter.patterns.levelName }}</strong></span>
+          </li>
+          <li>
+            <b>Line number:</b>
+            <span>{{ filter.patterns.lineNo }}</span>
+          </li>
+          <li>
+            <b>Message:</b>
+            <span><i>{{ filter.patterns.message }}</i></span>
+          </li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <h4>No filters.</h4>
+    {% endif %}
+  </li>
+</ul>
+{% endfor %}
+{% endif %}
+{% endblock %}

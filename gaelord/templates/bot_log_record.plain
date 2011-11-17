@@ -1,0 +1,2 @@
+Log record: {{ message }}
+({{ filename }}, {{ funcname }}, {{ levelname }}, {{ lineno }})

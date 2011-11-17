@@ -1,0 +1,4 @@
+Usage:
+/filters -- show a numbered list of filters
+/delete i -- delete filter by number from /filters
+/add -- interactive add filter

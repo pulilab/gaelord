@@ -1,0 +1,148 @@
+
+/* LOGVIEWER
+
+_____________________________________________________
+
+author: paizai
+version: 1.0
+
+_____________________________________________________
+
+*/
+
+/* IMPORT */
+
+@import url('framework.css');
+
+/* BASIC */
+
+.wrapper {}
+
+.borderbox {
+margin-bottom: 3em;
+padding: 1.5em;
+border: 1px solid rgba(0,0,0,0.1);
+background: rgba(0,0,0,0.05); }
+
+.borderbox .btn {
+margin-right: 0.75em; }
+
+/* COLORS */
+
+/* level colors */
+
+.lvl strong {
+color: #000; }
+
+.lvl.debug strong {
+background: #09f; }
+
+.lvl.warning strong {
+background: #fd0; }
+
+.lvl strong {
+background: #f90; }
+
+.lvl.critical strong {
+background: #f22; }
+
+/* HEADER */
+
+
+/* FOOTER */
+
+
+/* LISTS */
+
+ul {
+list-style: none;
+margin-left: 0;
+word-wrap: break-word; }
+
+ul ul {
+margin: 0 1.5em 1.5em; }
+
+ul ul ul {
+margin: 0 0 3em; }
+
+li hgroup {
+background: rgba(0,0,0,0.05); }
+
+li li hgroup {
+background: none;
+margin-bottom: 0.75em;
+padding-bottom: 0.75em;
+border-bottom: 1px solid rgba(0,0,0,0.2); }
+
+ul hgroup h3,
+ul hgroup h4 {
+display: inline; }
+
+ul hgroup h4 {
+font-weight: normal; }
+
+ul.tbl {
+display: table;
+table-layout: fixed;
+width: 100%; }
+
+ul.tbl li {}
+
+ul.flw {}
+
+ul.flw li {
+padding-bottom: 1.5em;
+margin: 0 1.5em 1.5em;
+border-bottom: 1px solid rgba(0,0,0,0.2);  }
+
+ul.tbl b,
+ul.tbl span {
+display: table-cell; }
+
+ul.tbl b {
+padding-right: 20px;
+min-width: 140px;
+font-size: 0.875em;
+white-space: nowrap; }
+
+ul.flw b {
+font-size: 0.875em; }
+
+ul.tbl span,
+ul.flw span {
+font-family: monospace;
+word-wrap: break-word; }
+
+ul.tbl .lvl strong,
+ul.flw .lvl strong {
+display: inline;
+display: inline-block;
+padding: 0 0.5em;
+height: 21px;
+line-height: 21px;
+text-transform: uppercase;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px; }
+
+ul.flw li .btn {
+margin-top: 0.75em; }
+
+/* FORMS */
+
+
+/* NARROW */
+
+@media (min-width: 721px) and (max-width: 960px) {}
+
+/* MOBILE */
+
+@media (max-width: 720px) {}
+
+/* RETINA */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {}
+
+/* MODERNIZR */
+
+
